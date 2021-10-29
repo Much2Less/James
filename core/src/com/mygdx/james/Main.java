@@ -40,26 +40,5 @@ public class Main {
             deck.distributeCards(p);
         }
 
-        //TODO Complete Gameflow in Main
-        //TODO Make a class Gameflow
-
-        /*
-        TODO CUI Programming:
-          User sees his Cards and can Use them (Keyboard Button: 1-3)
-          If the user has two or more cards of the same value he can lay them all together
-          If the user lays 4 cards of the same value, the current deck gets ended
-          User can see his own and other public cards (Keyboard Button: 4)
-          After pressing the button 4, the player will be sent to another screen where
-          they can choose which player deck they want to see or go back if they want
-          User can end the current deck if he thinks there are 4 cards of the same value (Keyboard Button: 5)
-          User can take the current deck on his hand if he is not able to lay a legal card (Keyboard Button: 9)
-         */
-
-        /*
-        TODO
-            If some player has a 4 on his current deck he begins the game
-            If two or more players have a 4, then the player with the first index begins the game
-            If no one has a 4 in his current deck
-         */
     }
 }

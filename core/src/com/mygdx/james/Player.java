@@ -14,11 +14,7 @@ public class Player {
     }
 
     //TODO Complete the layCard Method
-    public void layCard(int c) {
-        for(Card card : currents){
-            System.out.print(card.getCard());
-        }
-
+    public void layCard() {
     }
 
     public ArrayList<Card> getCurrents() {
@@ -51,4 +47,19 @@ public class Player {
     }
 
     //TODO Create addPublic, addPrivate, addCurrent methods
+
+    public void addPublic(Card c) {
+        this.publics.add(c);
+    }
+
+    public void addPrivate(Card c) {
+        this.privates.add(c);
+
+    }
+
+    public void addCurrent(Card c) {
+        this.currents.add(c);
+
+    }
+
 }
