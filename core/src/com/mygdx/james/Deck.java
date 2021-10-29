@@ -9,11 +9,22 @@ import java.util.ArrayList;
 public class Deck {
     //Number of cards per color
     int n = 13;
-    int size;
+
+    //From this deck you can take new cards for your deck (distributeCards, addCurrent/Public/Private)
     ArrayList<Card> cards = new ArrayList<>();
+
+    //This deck is for laying the cards (layCard)
     ArrayList<Card> pile = new ArrayList<>();
+
+    //If a deck is finished, it lands in the trash
+    ArrayList<Card> trash = new ArrayList<>();
+
+    //List of players
     ArrayList<Player> players = new ArrayList<>();
+
+    //Card that lays on top of the pile
     Card top;
+
 
     //fills deck with cards in order of value
     public void fillDeck(Card.Color color) {
