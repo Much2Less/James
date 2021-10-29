@@ -1,9 +1,12 @@
 package com.mygdx.james;
 
+import com.badlogic.gdx.graphics.Texture;
+
 public class Card {
     //2, 3, 4, 5, 6, 7, 8, 9, 10, 11=J, 12=Q, 13=K, 14=A
     int value;
-    enum Color {HEART, TILES, CLOVERS, PIKES}
+    enum Color {HEART, DIAMONDS, CLUBS, SPADES}
+    private Texture cardImage;
     Color color;
 
     Card(int value, Color color) {
@@ -12,14 +15,14 @@ public class Card {
             case HEART:
                 this.color = Color.HEART;
                 break;
-            case TILES:
-                this.color = Color.TILES;
+            case DIAMONDS:
+                this.color = Color.DIAMONDS;
                 break;
-            case CLOVERS:
-                this.color = Color.CLOVERS;
+            case CLUBS:
+                this.color = Color.CLUBS;
                 break;
-            case PIKES:
-                this.color = Color.PIKES;
+            case SPADES:
+                this.color = Color.SPADES;
                 break;
 
         }
@@ -30,6 +33,20 @@ public class Card {
         return color;
     }
 
+    public String getColorString() {
+        switch (this.getColor()) {
+            case HEART:
+                return "Heart";
+            case CLUBS:
+                return "Clubs";
+            case SPADES:
+                return "Spades";
+            case DIAMONDS:
+                return "Diamonds";
+        }
+        return null;
+    }
+
     public int getValue() {
         return value;
     }
@@ -38,7 +55,7 @@ public class Card {
         String value = "Value: ";
         String color = "Color: ";
 
-        switch (getValue()) {
+        switch (this.getValue()) {
             case 11:
                 value += "Jack\n";
                 break;
@@ -55,22 +72,18 @@ public class Card {
                 value += getValue() + "\n";
         }
 
-        switch (getColor()) {
-            case HEART:
-                color += "Heart\n";
-                break;
-            case CLOVERS:
-                color += "Clovers\n";
-                break;
-            case PIKES:
-                color += "Pikes\n";
-                break;
-            case TILES:
-                color += "Tiles\n";
-                break;
-        }
+        color += getColorString() + "\n";
 
         return value + color;
+
+    }
+
+    //TODO needs some testing
+    public String getImageName() {
+        String color = this.getColorString().toLowerCase()+"-";
+        int value = this.getValue();
+
+        return "card-"+color+(value)+".png";
 
     }
 }
