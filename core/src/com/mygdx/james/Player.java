@@ -1,7 +1,6 @@
 package com.mygdx.james;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Player {
     int player;
@@ -31,14 +30,14 @@ public class Player {
 
     public void showPublics() {
         for(Card p : publics){
-            System.out.print(p.getCard());
+            System.out.print(p.getCardString());
         }
     }
 
     public void showCurrents() {
         //currents.forEach(c -> System.out.print(c.getCard()));
         for(Card c : currents){
-            System.out.print(c.getCard());
+            System.out.print(c.getCardString());
         }
     }
 

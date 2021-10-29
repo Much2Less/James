@@ -34,7 +34,7 @@ public class Card {
         return value;
     }
 
-    public String getCard() {
+    public String getCardString() {
         String value = "Value: ";
         String color = "Color: ";
 
