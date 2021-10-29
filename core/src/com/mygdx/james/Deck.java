@@ -1,6 +1,5 @@
 package com.mygdx.james;
 
-import java.sql.Array;
 import java.util.*;
 import java.util.ArrayList;
 
@@ -37,9 +36,9 @@ public class Deck {
 
     public void fillAllColors() {
         fillDeck(Card.Color.HEART);
-        fillDeck(Card.Color.CLOVERS);
-        fillDeck(Card.Color.TILES);
-        fillDeck(Card.Color.PIKES);
+        fillDeck(Card.Color.CLUBS);
+        fillDeck(Card.Color.DIAMONDS);
+        fillDeck(Card.Color.SPADES);
     }
 
     //randomizes set of cards
