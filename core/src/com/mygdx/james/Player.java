@@ -12,8 +12,11 @@ public class Player {
         this.player = player;
     }
 
-    //TODO Complete the layCard Method
-    public void layCard() {
+    //Removes one or more current cards from the player
+    public void layCard(int[] c) {
+        for (int i: c) {
+            this.currents.remove(i);
+        }
     }
 
     public ArrayList<Card> getCurrents() {
