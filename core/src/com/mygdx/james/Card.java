@@ -1,13 +1,19 @@
 package com.mygdx.james;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.math.Rectangle;
 
 public class Card {
     //2, 3, 4, 5, 6, 7, 8, 9, 10, 11=J, 12=Q, 13=K, 14=A
     int value;
     enum Color {HEART, DIAMONDS, CLUBS, SPADES}
     private Texture cardImage;
+    private Sprite cardSprite;
+    private Rectangle box;
     Color color;
+
 
     Card(int value, Color color) {
         this.value = value;
@@ -26,6 +32,16 @@ public class Card {
                 break;
 
         }
+
+        cardImage = new Texture(Gdx.files.internal(getImageName()));
+
+        cardSprite = new Sprite(cardImage, 96, 144);
+        cardSprite.scale(2);
+        //TODO Make method which sets the position of the card
+        //cardSprite.setPosition(256, 256);
+        //box.x = ?
+        //box.y = ?
+        cardSprite.setRotation(90);
 
     }
 

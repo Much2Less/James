@@ -10,7 +10,6 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class JamesMain extends ApplicationAdapter {
 
-    private Texture cardImage;
     private OrthographicCamera camera;
     private SpriteBatch batch;
 
@@ -21,7 +20,6 @@ public class JamesMain extends ApplicationAdapter {
     	camera.setToOrtho(false, 800, 480);
 
 		batch = new SpriteBatch();
-        cardImage = new Texture(Gdx.files.internal("card-clubs-1.png"));
 	}
 
 
@@ -38,14 +36,13 @@ public class JamesMain extends ApplicationAdapter {
 	    ScreenUtils.clear(0,0,02.f,1);
 
 	    batch.begin();
-	    batch.draw(cardImage, 64, 64);
 	    batch.end();
 
 	}
 	
 	@Override
 	public void dispose () {
-	    cardImage.dispose();
+
 	}
 
 }

@@ -49,28 +49,7 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
-    //TODO Rework code
     public void distributeCards(Player player) {
-/*
-        player.privates.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.privates.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.privates.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.publics.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.publics.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.publics.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.currents.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.currents.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-        player.currents.add(cards.get(cards.size()-1));
-        cards.remove(getCardTop());
-*/
 
         player.privates.add(getCardTop());
         removeCardTop();
