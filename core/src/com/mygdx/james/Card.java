@@ -4,11 +4,14 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector3;
 
 public class Card {
     //2, 3, 4, 5, 6, 7, 8, 9, 10, 11=J, 12=Q, 13=K, 14=A
     int value;
     enum Color {HEART, DIAMONDS, CLUBS, SPADES}
+
+
     private Texture cardImage;
     private Sprite cardSprite;
     private Rectangle box;
@@ -36,12 +39,10 @@ public class Card {
         cardImage = new Texture(Gdx.files.internal(getImageName()));
 
         cardSprite = new Sprite(cardImage, 96, 144);
-        cardSprite.scale(2);
+        cardSprite.scale(1);
+        cardSprite.setPosition(128, 128);
+        box = new Rectangle(cardSprite.getX(), cardSprite.getY(), cardSprite.getWidth(), cardSprite.getHeight());
         //TODO Make method which sets the position of the card
-        //cardSprite.setPosition(256, 256);
-        //box.x = ?
-        //box.y = ?
-        cardSprite.setRotation(90);
 
     }
 
@@ -52,7 +53,7 @@ public class Card {
     public String getColorString() {
         switch (this.getColor()) {
             case HEART:
-                return "Heart";
+                return "Hearts";
             case CLUBS:
                 return "Clubs";
             case SPADES:
@@ -96,11 +97,27 @@ public class Card {
 
     //TODO needs some testing
     public String getImageName() {
-        String color = this.getColorString().toLowerCase()+"-";
+        String color = this.getColorString().toLowerCase();
         int value = this.getValue();
 
-        return "card-"+color+(value)+".png";
+        return "card-"+color+"-"+value+".png";
 
+    }
+
+    public Texture getCardImage() {
+        return cardImage;
+    }
+
+    public Sprite getCardSprite() {
+        return cardSprite;
+    }
+
+    public Rectangle getBox() {
+        return box;
+    }
+
+    public void setBox(Rectangle box) {
+        this.box = box;
     }
 }
 
