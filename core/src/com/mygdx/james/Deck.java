@@ -21,9 +21,12 @@ public class Deck {
     //List of players
     ArrayList<Player> players = new ArrayList<>();
 
-    //Card that lays on top of the pile
-    Card top;
 
+    //Card that lays on top of the pile
+    Card pileTop;
+
+    //Card that lays on top of the pile
+    Card cardTop;
 
     //fills deck with cards in order of value
     public void fillDeck(Card.Color color) {
@@ -48,24 +51,47 @@ public class Deck {
 
     //TODO Rework code
     public void distributeCards(Player player) {
+/*
         player.privates.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.privates.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.privates.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.publics.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.publics.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.publics.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.currents.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.currents.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
         player.currents.add(cards.get(cards.size()-1));
-        cards.remove(cards.size()-1);
+        cards.remove(getCardTop());
+*/
+
+        player.privates.add(getCardTop());
+        removeCardTop();
+        player.privates.add(getCardTop());
+        removeCardTop();
+        player.privates.add(getCardTop());
+        removeCardTop();
+
+        player.publics.add(getCardTop());
+        removeCardTop();
+        player.publics.add(getCardTop());
+        removeCardTop();
+        player.publics.add(getCardTop());
+        removeCardTop();
+
+        player.currents.add(getCardTop());
+        removeCardTop();
+        player.currents.add(getCardTop());
+        removeCardTop();
+        player.currents.add(getCardTop());
+        removeCardTop();
     }
 
     public void giveCards(Player player) {
@@ -73,11 +99,25 @@ public class Deck {
         cards.remove(cards.size()-1);
     }
 
-    public void setTop() {
-        this.top = cards.get(cards.size()-1);
+    public Card getPileTop() {
+        return pileTop;
     }
 
-    public Card getTop() {
-        return top;
+    public void setPileTop() {
+        this.pileTop = pile.get(pile.size()-1);
     }
+
+    public void removeCardTop() {
+        cards.remove(getCardTop());
+        setCardTop();
+    }
+
+    public Card getCardTop() {
+        return cardTop;
+    }
+
+    public void setCardTop() {
+        this.cardTop = cards.get(cards.size()-1);
+    }
+
 }
