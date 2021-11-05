@@ -3,13 +3,23 @@ package com.mygdx.james;
 import java.util.ArrayList;
 
 public class Player {
-    int player;
+    int playerNumber;
+    String name;
     ArrayList<Card> publics = new ArrayList<>();
     ArrayList<Card> privates = new ArrayList<>();
     ArrayList<Card> currents = new ArrayList<>();
 
-    Player(int player) {
-        this.player = player;
+    Player() {
+
+    }
+
+    Player(int n) {
+        this.playerNumber = n;
+    }
+
+    Player(int n, String name) {
+        this.playerNumber = n;
+        this.name = name;
     }
 
     //Removes one or more current cards from the player
@@ -44,8 +54,8 @@ public class Player {
         }
     }
 
-    public int getPlayer() {
-        return player;
+    public int getPlayerNumber() {
+        return playerNumber;
     }
 
     //TODO Create addPublic, addPrivate, addCurrent methods

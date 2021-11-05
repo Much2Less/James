@@ -9,16 +9,26 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import java.util.ArrayList;
+
 public class JamesMain extends ApplicationAdapter {
 
     private OrthographicCamera camera;
     private SpriteBatch batch;
+    private Deck gameDeck;
+	private ArrayList<Player> players;
 
 	@Override
     public void create() {
     	camera = new OrthographicCamera();
-    	camera.setToOrtho(false, 800, 480);
+    	camera.setToOrtho(true, 800, 480);
 
+    	gameDeck = new Deck();
+    	
+    	players.add(new Player(0));
+		for (Player p: players) {
+			gameDeck.distributeCards(p);
+		}
 
 
     	Gdx.input.setInputProcessor(new InputAdapter() {

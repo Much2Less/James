@@ -6,6 +6,12 @@ import java.util.ArrayList;
 //TODO Add Joker Card
 
 public class Deck {
+
+    Deck() {
+        fillAllColors();
+        shuffleDeck();
+    }
+
     //Number of cards per color
     int n = 13;
 
@@ -113,5 +119,9 @@ public class Deck {
 
     public ArrayList<Player> getPlayers() {
         return players;
+    }
+
+    public void addPlayers(Player p) {
+        players.add(p);
     }
 }
