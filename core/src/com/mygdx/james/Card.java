@@ -22,6 +22,62 @@ public class Card {
     Color color;
 
 
+    Card(int value, Color color, String type, int i) {
+        this.value = value;
+        switch (color) {
+            case HEART:
+                this.color = Color.HEART;
+                break;
+            case DIAMONDS:
+                this.color = Color.DIAMONDS;
+                break;
+            case CLUBS:
+                this.color = Color.CLUBS;
+                break;
+            case SPADES:
+                this.color = Color.SPADES;
+                break;
+
+        }
+
+        cardImage = new Texture(Gdx.files.internal(getImageName()));
+
+        m = 2.25f;
+        switch (type) {
+            case "public":
+                x = 128+(i*w);
+                y = 400;
+                //width
+                w = 94*m;
+                //height
+                h = 144*m;
+                break;
+            case "private":
+                x = 128+(i*w);
+                y = 420;
+                //width
+                w = 94*m;
+                //height
+                h = 144*m;
+                break;
+            case "current":
+                x = 128+(i*w);
+                y = 128;
+                //width
+                w = 94*m;
+                //height
+                h = 144*m;
+                break;
+            default:
+                break;
+        }
+
+        box = new Rectangle(x,y,w,h);
+
+        //TODO Make method which sets the position of the card
+
+    }
+
     Card(int value, Color color) {
         this.value = value;
         switch (color) {
@@ -55,7 +111,6 @@ public class Card {
         //TODO Make method which sets the position of the card
 
     }
-
     public Color getColor() {
         return color;
     }
