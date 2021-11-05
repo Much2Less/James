@@ -1,8 +1,10 @@
 package com.mygdx.james;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 
@@ -11,10 +13,12 @@ public class Card {
     int value;
     enum Color {HEART, DIAMONDS, CLUBS, SPADES}
 
+    private ShapeRenderer shapeRenderer;
 
     private Texture cardImage;
-    private Sprite cardSprite;
+    float x,y,w,h,m;
     private Rectangle box;
+
     Color color;
 
 
@@ -38,10 +42,16 @@ public class Card {
 
         cardImage = new Texture(Gdx.files.internal(getImageName()));
 
-        cardSprite = new Sprite(cardImage, 96, 144);
-        cardSprite.scale(1);
-        cardSprite.setPosition(128, 128);
-        box = new Rectangle(cardSprite.getX(), cardSprite.getY(), cardSprite.getWidth(), cardSprite.getHeight());
+        m = 2.25f;
+        x = 128;
+        y = 128;
+        //width
+        w = 94*m;
+        //height
+        h = 144*m;
+
+        box = new Rectangle(x,y,w,h);
+
         //TODO Make method which sets the position of the card
 
     }
@@ -108,16 +118,44 @@ public class Card {
         return cardImage;
     }
 
-    public Sprite getCardSprite() {
-        return cardSprite;
-    }
-
     public Rectangle getBox() {
         return box;
     }
 
     public void setBox(Rectangle box) {
         this.box = box;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public float getW() {
+        return w;
+    }
+
+    public void setW(float w) {
+        this.w = w;
+    }
+
+    public float getH() {
+        return h;
+    }
+
+    public void setH(float h) {
+        this.h = h;
     }
 }
 

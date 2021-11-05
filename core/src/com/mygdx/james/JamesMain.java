@@ -2,6 +2,7 @@ package com.mygdx.james;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -13,11 +14,23 @@ public class JamesMain extends ApplicationAdapter {
     private OrthographicCamera camera;
     private SpriteBatch batch;
 
-
-    @Override
+	@Override
     public void create() {
     	camera = new OrthographicCamera();
     	camera.setToOrtho(false, 800, 480);
+
+
+
+    	Gdx.input.setInputProcessor(new InputAdapter() {
+    		@Override
+			public boolean touchDown(int x, int y, int pointer, int button) {
+    			y = Gdx.graphics.getHeight() - y;
+
+
+
+    			return true;
+			}
+		});
 
 		batch = new SpriteBatch();
 	}

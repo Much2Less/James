@@ -99,4 +99,19 @@ public class Deck {
         this.cardTop = cards.get(cards.size()-1);
     }
 
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+    public ArrayList<Card> getPile() {
+        return pile;
+    }
+
+    public ArrayList<Card> getTrash() {
+        return trash;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
 }
